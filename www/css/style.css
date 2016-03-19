@@ -37,6 +37,10 @@ ion-content {
 	float: right;
 }
 
+.right-combat p {
+	font-size: 20px;
+}
+
 .center-combat {
 	height: 100%;
 	float: left;
