@@ -97,7 +97,7 @@ ion-content {
 .damage {
 	float: left;
 	position: absolute;
-	top: -5px;
+	top: -35px;
 	left: 17px;
 	color: red;
 }
