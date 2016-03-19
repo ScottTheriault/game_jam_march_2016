@@ -1,6 +1,6 @@
 angular.module('game_jam.combat_services', ['common.services'])
 
-.factory('combat_services', ['utility', 'player_services', function(utility, player_services) {
+.factory('combat_services', ['utility', 'player_services', 'animation_services', function(utility, player_services, animation_services) {
 	var PLAYER = 'PLAYER';
 	var ENEMY = 'ENEMY';
 	var TURNS_SHOWN = 10;
@@ -72,14 +72,7 @@ angular.module('game_jam.combat_services', ['common.services'])
 		if (turn.type !== attackeeType) {
 			switch (combat.toggledMove) {
 				case TOGGLE_ATTACK:
-					attackerDom.animate({
-						left: 1000,
-					}, {
-						duration: 1000,
-						step: function( now, fx ){
-							$( ".block:gt(0)" ).css( "left", now );
-						}
-					});
+					animation_services.attack(attackerDom, attackeeDom);
 					break;
 				case TOGGLE_SPELL:
 					break;
