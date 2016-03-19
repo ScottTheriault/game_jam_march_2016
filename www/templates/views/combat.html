@@ -2,9 +2,11 @@
 	<ion-content class="noHeader" scroll="false">
 		<div class="fill" style="height: {{::getWindowHeight()}}px">
 			<!-- Turns -->
-			<div class="left-combat">
+			<div class="left-combat" align="center">
 				<div class="turn" ng-repeat="turn in getTurns()">
-				
+					<div ng-repeat="player in turn.players">
+						<div ng-include="'templates/fragments/player.html'"></div>
+					</div>
 				</div>
 			</div>
 
