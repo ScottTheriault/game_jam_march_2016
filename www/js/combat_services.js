@@ -70,9 +70,11 @@ angular.module('game_jam.combat_services', ['common.services'])
 		}
 
 		if (turn.type !== attackeeType) {
+			var damage = 0;
 			switch (combat.toggledMove) {
 				case TOGGLE_ATTACK:
-					animation_services.attack(attackerDom, attackeeDom);
+					damage = player_services.getBaseDamage(attacker);
+					animation_services.attack(attackerDom, attackeeDom, attackeeType === PLAYER);
 					break;
 				case TOGGLE_SPELL:
 					break;

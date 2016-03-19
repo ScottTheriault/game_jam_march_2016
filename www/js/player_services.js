@@ -1,10 +1,22 @@
 angular.module('game_jam.player_services', ['common.services', 'game_jam.item_services'])
 
 .factory('player_services', ['utility', 'item_services', function(utility, item_services) {
+	var DMG_PER_LVL = 2;
+
 	var players = [];
 
 	var enemies = [];
 
+	function getItemDamage(item) {
+		if (item === null) {
+			return 0;
+		}
+		var subDamage = 0;
+		for (var i = 0; i < item.items.length; i++) {
+			subDamage += getItemDamage(item.items[i].item);
+		}
+		return item.attack + subDamage;
+	}
 	return {
 		setNewPlayer: function() {
 			player = {isPlayer: true};
@@ -52,6 +64,11 @@ angular.module('game_jam.player_services', ['common.services', 'game_jam.item_se
 		},
 		getEnemies: function() {
 			return enemies;
+		},
+		getBaseDamage: function(player) {
+			var damage = player.level * DMG_PER_LVL;
+			damage += getItemDamage(player.head);
+			return damage;
 		}
 	}
 }]);
