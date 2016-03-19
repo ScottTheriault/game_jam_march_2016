@@ -2,6 +2,7 @@ angular.module('game_jam.player_services', ['common.services', 'game_jam.item_se
 
 .factory('player_services', ['utility', 'item_services', function(utility, item_services) {
 	var DMG_PER_LVL = 2;
+	var HEALTH_PER_LVL = 2;
 
 	var players = [];
 
@@ -17,6 +18,26 @@ angular.module('game_jam.player_services', ['common.services', 'game_jam.item_se
 		}
 		return item.attack + subDamage;
 	}
+
+	function getItemHealth(item) {
+		console.log(item);
+		if (item === null) {
+			return 0;
+		}
+		var subDamage = 0;
+		for (var i = 0; i < item.items.length; i++) {
+			subDamage += getItemDamage(item.items[i].item);
+		}
+		return item.attack + subDamage;
+	}
+
+	function setPlayerCurrentHealth(player) {
+		var health = player.level * HEALTH_PER_LVL;
+		health += getItemHealth(player.head);
+		player.maxHealth = health;
+		player.currentHealth = health;
+	}
+
 	return {
 		setNewPlayer: function() {
 			player = {isPlayer: true};
@@ -43,6 +64,7 @@ angular.module('game_jam.player_services', ['common.services', 'game_jam.item_se
 					player.head = item_services.getById(2);
 					break;
 			}
+			setPlayerCurrentHealth(player);
 			players.push(player);
 		},
 		clearPlayers: function() {
@@ -57,6 +79,7 @@ angular.module('game_jam.player_services', ['common.services', 'game_jam.item_se
 		},
 		addEnemyPlayer: function(enemy) {
 			enemy.index = enemies.length;
+			setPlayerCurrentHealth(enemy);
 			enemies.push(enemy);
 		},
 		getPlayers: function() {
