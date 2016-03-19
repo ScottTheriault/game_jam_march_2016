@@ -1,0 +1,8 @@
+ion-content {
+	top: 0px !important;
+	bottom: 0px !important;
+}
+
+.tabs {
+	display: none;
+}
