@@ -56,6 +56,10 @@ angular.module('game_jam.combat_services', ['common.services'])
 	}
 
 	function attack(attackee) {
+		if (attackee.currentHealth <= 0) {
+			return;
+		}
+
 		var turn = combat.turns[0];
 		var attacker = turn.player;
 
@@ -83,6 +87,8 @@ angular.module('game_jam.combat_services', ['common.services'])
 				default:
 					return;
 			}
+
+			attackee.currentHealth -= damage;
 		}
 	}
 
