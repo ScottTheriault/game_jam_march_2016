@@ -93,6 +93,22 @@ ion-content {
 	-ms-filter: "FlipH";
 }
 
+.enemies .damage {
+	float: right !important;
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
+}
+
+.damage {
+	position: relative;
+	top: -20px;
+	right: 15px;
+	color: red;
+}
 /* Player */
 
 .player-portrait {

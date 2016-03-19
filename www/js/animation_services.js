@@ -29,8 +29,18 @@ angular.module('game_jam.animation_services', ['common.services'])
 
 	}
 
+	function popDamage(dom, damage) {
+		var dmgDom = dom.find('.damage');
+		dmgDom.css("display", "inline-block");
+		dmgDom.text(damage);
+		console.log(dmgDom);
+		$timeout(function() {
+			dmgDom.hide();
+		}, 2000);
+	}
+
 	return {
-		attack: function(attacker, attackee, invert) {
+		attack: function(attacker, attackee, damage, invert) {
 			var attackerPosition = attacker.position();
 			var attackeePosition = attackee.position();
 
@@ -39,6 +49,7 @@ angular.module('game_jam.animation_services', ['common.services'])
 			move(attacker, attackeePosition.top, left, 1000, invert);
 
 			$timeout(function() {
+				popDamage(attackee, damage);
 				shake(attackee, !invert);
 			}, 1000);
 
