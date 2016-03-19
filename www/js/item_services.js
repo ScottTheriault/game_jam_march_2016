@@ -29,6 +29,11 @@ angular.module('game_jam.item_services', ['common.services'])
 							{slot: 'hat', item: null},
 							{slot: 'body', item: null}
 						]
+				},
+				{
+					id: 3, slot: 'head', name: 'evil ball', img: 'img/enemy/heads/evil_ball.png', style: '',
+					attack: 1, defense: 1, spell_bonus: 0,
+					items: []
 				}
 			];
 	return {

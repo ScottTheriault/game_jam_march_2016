@@ -39,6 +39,7 @@ ion-content {
 .players {
 	width: 50%;
 	height: 100%;
+	float: left;
 }
 
 .players > div {
@@ -60,6 +61,16 @@ ion-content {
 .players > div:nth-child(3) {
 	bottom: 20px;
 	left: 110px;
+}
+
+.enemies {
+	float: right !important;
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
 }
 
 /* Player */

@@ -36,8 +36,14 @@ angular.module('game_jam.player_services', ['common.services', 'game_jam.item_se
 		addPlayer: function(player) {
 			players.push(player);
 		},
+		addEnemyPlayer: function(enemy) {
+			enemies.push(enemy);
+		},
 		getPlayers: function() {
 			return players;
+		},
+		getEnemies: function() {
+			return enemies;
 		}
 	}
 }]);
