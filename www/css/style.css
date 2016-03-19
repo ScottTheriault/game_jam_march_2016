@@ -19,8 +19,15 @@ ion-content {
 .left-combat {
 	height: 100%;
 	width: 100px;
-	background-color: pink;
 	float: left;
+	background-color: #221F1F;
+}
+
+.turn {
+	background-color: WHITE;
+	width: 92px;
+	height: 92px;
+	margin: 4px;
 }
 
 .right-combat {

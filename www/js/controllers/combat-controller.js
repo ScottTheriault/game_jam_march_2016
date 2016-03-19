@@ -22,4 +22,8 @@ angular.module('game_jam.controllers')
 	$scope.getEnemies = function() {
 		return player_services.getEnemies();
 	}
+
+	$scope.getTurns = function() {
+		return combat_services.getTurns();
+	}
 });
