@@ -4,6 +4,11 @@ angular.module('game_jam.combat_services', ['common.services'])
 	var PLAYER = 'PLAYER';
 	var ENEMY = 'ENEMY';
 	var TURNS_SHOWN = 10;
+
+	var TOGGLE_ATTACK = "ATTACK";
+	var TOGGLE_SPELL = "SPELL";
+	var TOGGLE_SPECIAL = "SPECIAL";
+
 	var combat = {};
 
 	function addTurn() {
@@ -46,16 +51,25 @@ angular.module('game_jam.combat_services', ['common.services'])
 			turn.player = nextPlayer;
 		}
 
-		console.log(turn.player);
 		turn.players = [turn.player];
 		turns.push(turn);
 	}
 
 	return {
+		attackToggle: function() {
+			return TOGGLE_ATTACK;
+		},
+		spellToggle: function() {
+			return TOGGLE_SPELL;
+		},
+		specialToggle: function() {
+			return TOGGLE_SPECIAL;
+		},
 		newCombat: function(backgroundImg) {
 			combat =
 				{
-					backgroundImage: backgroundImg
+					backgroundImage: backgroundImg,
+					toggledMove: ''
 				};
 			combat.turns = [];
 			while (combat.turns.length < TURNS_SHOWN) {
@@ -67,6 +81,11 @@ angular.module('game_jam.combat_services', ['common.services'])
 		},
 		getTurns: function() {
 			return combat.turns;
+		},
+		moveToggle: function(move) {
+			if (combat.turns[0].type === PLAYER) {
+				combat.toggledMove = move;
+			}
 		}
 	}
 }]);

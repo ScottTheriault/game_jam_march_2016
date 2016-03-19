@@ -27,17 +27,17 @@
 
 			<!-- Moves -->
 			<div class="right-combat" align="center">
-				<div class="turn" style="height: {{::getWindowHeight()/3 - 5}}px; padding-top: {{::(getWindowHeight()/3 - 5)/2 - 20}}px;">
+				<div class="turn" style="height: {{::getWindowHeight()/3 - 5}}px; padding-top: {{::(getWindowHeight()/3 - 5)/2 - 20}}px;" ng-click="toggleMove(MOVE_ATTACK)">
 					<p>
 						Attack
 					</p>
 				</div>
-				<div class="turn" style="height: {{::getWindowHeight()/3 - 5}}px; padding-top: {{::(getWindowHeight()/3 - 5)/2 - 20}}px;">
+				<div class="turn" style="height: {{::getWindowHeight()/3 - 5}}px; padding-top: {{::(getWindowHeight()/3 - 5)/2 - 20}}px;" ng-click="toggleMove(MOVE_SPELL)">
 					<p>
 						Spell
 					</p>
 				</div>
-				<div class="turn" style="height: {{::getWindowHeight()/3 - 5}}px; padding-top: {{::(getWindowHeight()/3 - 5)/2 - 20}}px;">
+				<div class="turn" style="height: {{::getWindowHeight()/3 - 5}}px; padding-top: {{::(getWindowHeight()/3 - 5)/2 - 20}}px;" ng-click="toggleMove(MOVE_SPECIAL)">
 					<p>
 						Special
 					</p>

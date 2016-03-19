@@ -9,6 +9,10 @@ angular.module('game_jam.controllers')
 	player_services.addEnemyPlayer(enemy_services.getById(0));
 	player_services.addEnemyPlayer(enemy_services.getById(0));
 
+	$scope.MOVE_ATTACK = combat_services.attackToggle();
+	$scope.MOVE_SPELL = combat_services.spellToggle();
+	$scope.MOVE_SPECIAL = combat_services.specialToggle();
+
 	combat_services.newCombat('img/background/combat/simple_test.png');
 
 	$scope.getBackgroundImg = function() {
@@ -25,5 +29,9 @@ angular.module('game_jam.controllers')
 
 	$scope.getTurns = function() {
 		return combat_services.getTurns();
+	}
+
+	$scope.toggleMove = function(move) {
+		combat_services.moveToggle(move);
 	}
 });
