@@ -13,13 +13,13 @@
 			<!-- View -->
 			<div class="center-combat" style="background-image: url({{getBackgroundImg()}}); width: {{::getWindowWidth() - 200}}px;">
 				<div class="players">
-					<div ng-repeat="player in getPlayers()">
+					<div ng-repeat="player in getPlayers()" id="player{{player.index}}">
 						<div ng-include="'templates/fragments/player.html'"></div>
 					</div>
 				</div>
 
 				<div class="players enemies">
-					<div ng-repeat="player in getEnemies()" ng-click="attackTarget(player)">
+					<div ng-repeat="player in getEnemies()" ng-click="attackTarget(player)" id="enemy{{player.index}}">
 						<div ng-include="'templates/fragments/player.html'"></div>
 					</div>
 				</div>

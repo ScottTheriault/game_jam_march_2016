@@ -59,18 +59,23 @@ angular.module('game_jam.combat_services', ['common.services'])
 		var turn = combat.turns[0];
 		var attacker = turn.player;
 
-		var playerType = player.isPlayer ? PLAYER : ENEMY;
+		var attackeeType = attackee.isPlayer ? PLAYER : ENEMY;
 
-		if (turn.type !== playerType) {
+		if (attackeeType === PLAYER) {
+			var attackeeDom = $('#player' + attackee.index);
+			var attackerDom = $('#enemy' + attacker.index);
+		} else {
+			var attackeeDom = $('#enemy' + attackee.index);
+			var attackerDom = $('#player' + attacker.index);
+		}
+
+		if (turn.type !== attackeeType) {
 			switch (combat.toggledMove) {
 				case TOGGLE_ATTACK:
-					alert(1);
 					break;
 				case TOGGLE_SPELL:
-					alert(2);
 					break;
 				case TOGGLE_SPECIAL:
-					alert(3);
 					break;
 				default:
 					return;
