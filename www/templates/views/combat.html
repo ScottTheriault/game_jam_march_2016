@@ -3,7 +3,7 @@
 		<div class="fill" style="height: {{::getWindowHeight()}}px">
 			<!-- Turns -->
 			<div class="left-combat" align="center">
-				<div class="turn" ng-repeat="turn in getTurns()">
+				<div class="turn" ng-repeat="turn in getTurns()" ng-class="{'active-turn': turn === getTurns()[0]}">
 					<div ng-repeat="player in turn.players">
 						<div ng-include="'templates/fragments/player.html'"></div>
 					</div>
@@ -27,17 +27,17 @@
 
 			<!-- Moves -->
 			<div class="right-combat" align="center">
-				<div class="turn" style="height: {{::getWindowHeight()/3 - 5}}px; padding-top: {{::(getWindowHeight()/3 - 5)/2 - 20}}px;" ng-click="toggleMove(MOVE_ATTACK)">
+				<div class="turn" style="height: {{::getWindowHeight()/3 - 5}}px; padding-top: {{::(getWindowHeight()/3 - 5)/2 - 20}}px;" ng-click="toggleMove(MOVE_ATTACK)" ng-class="{'active-turn': isActiveMove(MOVE_ATTACK)}">
 					<p>
 						Attack
 					</p>
 				</div>
-				<div class="turn" style="height: {{::getWindowHeight()/3 - 5}}px; padding-top: {{::(getWindowHeight()/3 - 5)/2 - 20}}px;" ng-click="toggleMove(MOVE_SPELL)">
+				<div class="turn" style="height: {{::getWindowHeight()/3 - 5}}px; padding-top: {{::(getWindowHeight()/3 - 5)/2 - 20}}px;" ng-click="toggleMove(MOVE_SPELL)" ng-class="{'active-turn': isActiveMove(MOVE_SPELL)}">
 					<p>
 						Spell
 					</p>
 				</div>
-				<div class="turn" style="height: {{::getWindowHeight()/3 - 5}}px; padding-top: {{::(getWindowHeight()/3 - 5)/2 - 20}}px;" ng-click="toggleMove(MOVE_SPECIAL)">
+				<div class="turn" style="height: {{::getWindowHeight()/3 - 5}}px; padding-top: {{::(getWindowHeight()/3 - 5)/2 - 20}}px;" ng-click="toggleMove(MOVE_SPECIAL)" ng-class="{'active-turn': isActiveMove(MOVE_SPECIAL)}">
 					<p>
 						Special
 					</p>

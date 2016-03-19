@@ -30,6 +30,10 @@ ion-content {
 	margin: 4px;
 }
 
+.active-turn {
+	background-color: #FFF555;
+}
+
 .right-combat {
 	height: 100%;
 	width: 100px;

@@ -86,6 +86,9 @@ angular.module('game_jam.combat_services', ['common.services'])
 			if (combat.turns[0].type === PLAYER) {
 				combat.toggledMove = move;
 			}
+		},
+		getToggledMove: function() {
+			return combat.toggledMove;
 		}
 	}
 }]);

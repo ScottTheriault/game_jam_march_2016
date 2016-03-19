@@ -34,4 +34,8 @@ angular.module('game_jam.controllers')
 	$scope.toggleMove = function(move) {
 		combat_services.moveToggle(move);
 	}
+
+	$scope.isActiveMove = function(move) {
+		return combat_services.getToggledMove() === move;
+	}
 });
