@@ -1,6 +1,6 @@
-angular.module('game_jam.player_services', ['common.services'])
+angular.module('game_jam.player_services', ['common.services', 'game_jam.item_services'])
 
-.factory('player_services', ['utility', function(utility) {
+.factory('player_services', ['utility', 'item_services', function(utility, item_services) {
 	var players = [];
 
 	var enemies = [];
