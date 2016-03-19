@@ -32,5 +32,8 @@ angular.module('game_jam.item_services', ['common.services'])
 				}
 			];
 	return {
+		getById: function(id) {
+			return JSON.parse(JSON.stringify(items))
+		}
 	}
 }]);
