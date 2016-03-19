@@ -44,7 +44,6 @@ ion-content {
 .players > div {
 	width: 50px;
 	height: 75px;
-	background-color: orange;
 	position: absolute;
 }
 
@@ -61,4 +60,13 @@ ion-content {
 .players > div:nth-child(3) {
 	bottom: 20px;
 	left: 110px;
+}
+
+/* Player */
+
+.player-head {
+	width: 25px;
+	height: 25px;
+	position: relative;
+	top: 5px;
 }

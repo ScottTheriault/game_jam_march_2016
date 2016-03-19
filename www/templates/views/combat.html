@@ -6,7 +6,7 @@
 			<div class="center-combat" style="background-image: url({{getBackgroundImg()}}); width: {{::getWindowWidth() - 200}}px;">
 				<div class="players">
 					<div ng-repeat="player in getPlayers()">
-					
+						<div ng-include="'templates/fragments/player.html'"></div>
 					</div>
 				</div>
 			</div>

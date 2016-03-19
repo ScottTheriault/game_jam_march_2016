@@ -7,22 +7,22 @@ angular.module('game_jam.player_services', ['common.services', 'game_jam.item_se
 
 	return {
 		setNewPlayer: function() {
-			player = {items: []};
+			player = {};
 			switch (players.length) {
 				case (0):
 					player.name="Scott";
 					player.level=1;
-					player.items = [item_services.getById(0)];
+					player.head = item_services.getById(0);
 					break;
 				case (1):
 					player.name="Kaylin";
 					player.level=2;
-					player.items = [item_services.getById(1)];
+					player.head = item_services.getById(1);
 					break;
 				case (2):
 					player.name="Nathan";
 					player.level=3;
-					player.items = [item_services.getById(2)];
+					player.head = item_services.getById(2);
 					break;
 			}
 			players.push(player);
