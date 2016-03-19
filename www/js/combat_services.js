@@ -72,6 +72,14 @@ angular.module('game_jam.combat_services', ['common.services'])
 		if (turn.type !== attackeeType) {
 			switch (combat.toggledMove) {
 				case TOGGLE_ATTACK:
+					attackerDom.animate({
+						left: 1000,
+					}, {
+						duration: 1000,
+						step: function( now, fx ){
+							$( ".block:gt(0)" ).css( "left", now );
+						}
+					});
 					break;
 				case TOGGLE_SPELL:
 					break;
