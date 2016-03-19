@@ -4,7 +4,7 @@ angular.module('game_jam.controllers')
 	player_services.setNewPlayer();
 	combat_services.newCombat('img/background/combat/simple_test.png');
 
-	$scope.testIt = function () {
-		return player_services.getPlayers();
+	$scope.getBackgroundImg = function() {
+		return combat_services.getBackgroundImg();
 	}
 });

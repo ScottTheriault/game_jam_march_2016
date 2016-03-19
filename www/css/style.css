@@ -13,5 +13,25 @@ ion-content {
 	height: 100%;
 	padding: 0px;
 	margin: 0px;
-	background-color: teal;
+}
+
+/* VIEWS */
+.left-combat {
+	height: 100%;
+	width: 100px;
+	background-color: pink;
+	float: left;
+}
+
+.right-combat {
+	height: 100%;
+	width: 100px;
+	background-color: maroon;
+	float: right;
+}
+
+.center-combat {
+	height: 100%;
+	float: left;
+	background-size: 100% 100%;
 }

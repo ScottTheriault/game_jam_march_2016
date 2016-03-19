@@ -9,6 +9,9 @@ angular.module('game_jam.combat_services', ['common.services'])
 				{
 					backgroundImage: backgroundImg
 				};
+		},
+		getBackgroundImg: function() {
+			return combat.backgroundImage;
 		}
 	}
 }]);
