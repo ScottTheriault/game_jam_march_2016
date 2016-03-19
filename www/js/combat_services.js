@@ -55,6 +55,29 @@ angular.module('game_jam.combat_services', ['common.services'])
 		turns.push(turn);
 	}
 
+	function attack(attackee) {
+		var turn = combat.turns[0];
+		var attacker = turn.player;
+
+		var playerType = player.isPlayer ? PLAYER : ENEMY;
+
+		if (turn.type !== playerType) {
+			switch (combat.toggledMove) {
+				case TOGGLE_ATTACK:
+					alert(1);
+					break;
+				case TOGGLE_SPELL:
+					alert(2);
+					break;
+				case TOGGLE_SPECIAL:
+					alert(3);
+					break;
+				default:
+					return;
+			}
+		}
+	}
+
 	return {
 		attackToggle: function() {
 			return TOGGLE_ATTACK;
@@ -89,6 +112,9 @@ angular.module('game_jam.combat_services', ['common.services'])
 		},
 		getToggledMove: function() {
 			return combat.toggledMove;
+		},
+		attackTarget: function(player) {
+			attack(player);
 		}
 	}
 }]);

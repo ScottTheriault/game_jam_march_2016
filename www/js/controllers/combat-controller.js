@@ -38,4 +38,8 @@ angular.module('game_jam.controllers')
 	$scope.isActiveMove = function(move) {
 		return combat_services.getToggledMove() === move;
 	}
+
+	$scope.attackTarget = function(player) {
+		combat_services.attackTarget(player);
+	}
 });

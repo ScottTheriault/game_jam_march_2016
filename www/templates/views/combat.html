@@ -19,7 +19,7 @@
 				</div>
 
 				<div class="players enemies">
-					<div ng-repeat="player in getEnemies()">
+					<div ng-repeat="player in getEnemies()" ng-click="attackTarget(player)">
 						<div ng-include="'templates/fragments/player.html'"></div>
 					</div>
 				</div>

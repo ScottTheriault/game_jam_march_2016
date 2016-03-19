@@ -7,7 +7,7 @@ angular.module('game_jam.player_services', ['common.services', 'game_jam.item_se
 
 	return {
 		setNewPlayer: function() {
-			player = {};
+			player = {isPlayer: true};
 			switch (players.length) {
 				case (0):
 					player.id = 0;
