@@ -1,8 +1,11 @@
 <ion-view hide-nav-bar="true">
 	<ion-content class="noHeader">
 		<div class="fill" style="height: {{::getWindowHeight()}}px">
+			<!-- Turns -->
 			<div class="left-combat">
 			</div>
+
+			<!-- View -->
 			<div class="center-combat" style="background-image: url({{getBackgroundImg()}}); width: {{::getWindowWidth() - 200}}px;">
 				<div class="players">
 					<div ng-repeat="player in getPlayers()">
@@ -16,6 +19,8 @@
 					</div>
 				</div>
 			</div>
+
+			<!-- Moves -->
 			<div class="right-combat">
 			</div>
 		</div>
