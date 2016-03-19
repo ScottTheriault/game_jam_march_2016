@@ -10,27 +10,32 @@ angular.module('game_jam.combat_services', ['common.services'])
 		var turns = combat.turns;
 		var turn = {};
 
-		if (turns.length) {
+		if (!turns.length) {
 			turn.type = PLAYER;
 			turn.player = player_services.getPlayers()[0];
-			console.log(turn);
 		} else {
 			var nextPlayer = undefined;
-			if (player.type === PLAYER) {
-				var id = player.id;
-				nextPlayer = player_services.getEnemies()[id];
+			var lastTurn = turns[turns.length - 1];
+			player = lastTurn.player;
+			if (lastTurn.type === PLAYER) {
+				var index = player.index;
+				nextPlayer = player_services.getEnemies()[index];
 				turn.type = ENEMY;
 				if (typeof nextPlayer === 'undefined') {
 					turn.type = PLAYER;
-					nextPlayer = player_services.getPlayers()[id+1];
+					nextPlayer = player_services.getPlayers()[index+1];
 				}
 			} else {
-				var id = player.id + 1;
-				nextPlayer = player_services.getPlayers()[0];
+				var index = player.index + 1;
+				nextPlayer = player_services.getPlayers()[index];
 				turn.type = PLAYER;
 				if (typeof nextPlayer === 'undefined') {
-					nextPlayer = player_services.getEnemies()[id];
+					nextPlayer = player_services.getEnemies()[index];
 					turn.type = ENEMY;
+					if (typeof nextPlayer === 'undefined') {
+						turn.type = PLAYER;
+						nextPlayer = player_services.getPlayers()[index+1];
+					}
 				}
 			}
 
@@ -41,6 +46,7 @@ angular.module('game_jam.combat_services', ['common.services'])
 			turn.player = nextPlayer;
 		}
 
+		console.log(turn.player);
 		turn.players = [turn.player];
 		turns.push(turn);
 	}
