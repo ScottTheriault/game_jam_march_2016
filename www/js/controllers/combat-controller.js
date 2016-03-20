@@ -13,7 +13,7 @@ angular.module('game_jam.controllers')
 	$scope.MOVE_SPELL = combat_services.spellToggle();
 	$scope.MOVE_SPECIAL = combat_services.specialToggle();
 
-	combat_services.newCombat('img/background/combat/simple_test.png');
+	combat_services.newCombat('img/background/combat/background_forest.png');
 
 	$scope.getBackgroundImg = function() {
 		return combat_services.getBackgroundImg();
