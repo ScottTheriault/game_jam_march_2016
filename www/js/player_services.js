@@ -89,6 +89,19 @@ angular.module('game_jam.player_services', ['common.services', 'game_jam.item_se
 			setPlayerCurrentHealth(player);
 			players.push(player);
 		},
+		setMage: function() {
+			player =
+				{
+					isPlayer: true,
+					id: 2,
+					index: 2,
+					name: "Nathan",
+					level: 5,
+					head: item_services.getById(2)
+				};
+			setPlayerCurrentHealth(player);
+			players.push(player);
+		},
 		setNewPlayer: function() {
 			player = {isPlayer: true};
 			switch (players.length) {
