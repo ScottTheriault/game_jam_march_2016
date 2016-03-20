@@ -32,7 +32,7 @@ angular.module('game_jam.item_services', ['common.services'])
 				},
 				{
 					id: 3, slot: 'head', name: 'evil ball', img: 'img/enemy/heads/evil_ball.png', style: '',
-					attack: 1, defense: 1, spell_bonus: 0,
+					attack: 0, defense: 0, spell_bonus: 0,
 					items: []
 				},
 				{
@@ -41,22 +41,22 @@ angular.module('game_jam.item_services', ['common.services'])
 					items: []
 				},
 				{
-					id: 5, slot: 'body', name: 'basic warrior hat', img: 'img/body/basic_warrior.png', style: 'width: 25px; position: absolute; top: 26px; left: 7px',
-					attack: 1, defense: 5, spell_bonus: 0,
+					id: 5, slot: 'body', name: 'basic warrior body', img: 'img/body/basic_warrior.png', style: 'width: 25px; position: absolute; top: 26px; left: 7px',
+					attack: 1, defense: 5, spell_bonus: -2,
 					items: [
 						{slot: 'arm', item: null},
 					]
 				},
 				{
 					id: 6, slot: 'arm', name: 'basic warrior arm', img: 'img/arms/basic_warrior_arm.png', style: 'width: 25px; position: absolute; top: 26px; left: 17px',
-					attack: 2, defense: 0, spell_bonus: 0,
+					attack: 0, defense: 1, spell_bonus: 0,
 					items: [
 						{slot: 'weapon', item: null},
 					]
 				},
 				{
 					id: 7, slot: 'weapon', name: 'basic warrior sword', img: 'img/weapons/basic_warrior_sword.png', style: 'width: 14px; position: absolute; top: -1px; left: 31px',
-					attack: 5, defense: 1, spell_bonus: 0,
+					attack: 5, defense: 3, spell_bonus: 1,
 					items: []
 				}
 			];
