@@ -9,6 +9,9 @@ angular.module('game_jam.combat_services', ['common.services'])
 	var TOGGLE_SPELL = "SPELL";
 	var TOGGLE_SPECIAL = "SPECIAL";
 
+	var COMBAT_WIN_STRING = "You WIN!";
+	var COMBAT_LOSE_STRING = "You LOST :-(";
+
 	var combat = {};
 
 	function addTurn() {
@@ -96,16 +99,49 @@ angular.module('game_jam.combat_services', ['common.services'])
 			}, 2500);
 
 			$timeout(function() {
-				combat.toggledMove = '';
-				combat.turns.shift();
-				addTurn();
-				if (combat.turns[0].type === ENEMY) {
-					enemyPlay();
+				var players = player_services.getEnemies();
+				var playerAlive = false;
+				for (var i = 0; i < players.length; i++) {
+					if (players[i].currentHealth > 0) {
+						playerAlive = true;
+					}
+				}
+				if (!playerAlive) {
+					combat.overString = COMBAT_WIN_STRING;
+				}
+
+				var players = player_services.getPlayers();
+				var playerAlive = false;
+				for (var i = 0; i < players.length; i++) {
+					if (players[i].currentHealth > 0) {
+						playerAlive = true;
+					}
+				}
+				if (!playerAlive) {
+					combat.overString = COMBAT_LOSE_STRING;
+				}
+
+				if (!combat.overString) {
+					nextTurn();
+					if (combat.turns[0].type === ENEMY) {
+						enemyPlay();
+					}
+				} else {
+					combat.toggledMove = '';
 				}
 			}, 3500);
 		}
 	}
 
+	function nextTurn() {
+		combat.toggledMove = '';
+		combat.turns.shift();
+		addTurn();
+
+		if (combat.turns[0].player.currentHealth <= 0) {
+			nextTurn();
+		}
+	}
 	function enemyPlay() {
 		var players = player_services.getPlayers();
 		var index = Math.floor(Math.random() * players.length);
@@ -131,7 +167,8 @@ angular.module('game_jam.combat_services', ['common.services'])
 			combat =
 				{
 					backgroundImage: backgroundImg,
-					toggledMove: ''
+					toggledMove: '',
+					overString: ''
 				};
 			combat.turns = [];
 			while (combat.turns.length < TURNS_SHOWN) {
@@ -154,6 +191,9 @@ angular.module('game_jam.combat_services', ['common.services'])
 		},
 		attackTarget: function(player) {
 			attack(player);
+		},
+		getCombatOverString: function() {
+			return combat.overString;
 		}
 	}
 }]);

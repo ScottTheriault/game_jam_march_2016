@@ -46,7 +46,7 @@ angular.module('game_jam.animation_services', ['common.services'])
 		dmgDom.text(damage);
 		$timeout(function() {
 			dmgDom.hide();
-		}, 2000);
+		}, 1500);
 	}
 
 	return {

@@ -16,6 +16,17 @@ ion-content {
 }
 
 /* VIEWS */
+
+.combat-over {
+	height: 600px;
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	text-align: center;
+	font-size: 75px;
+	padding-top: 150px;
+}
+
 .left-combat {
 	height: 100%;
 	width: 100px;

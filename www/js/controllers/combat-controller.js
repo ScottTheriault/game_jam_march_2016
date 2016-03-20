@@ -42,4 +42,8 @@ angular.module('game_jam.controllers')
 	$scope.attackTarget = function(player) {
 		combat_services.attackTarget(player);
 	}
+
+	$scope.getCombatOverString = function() {
+		return combat_services.getCombatOverString();
+	}
 });
