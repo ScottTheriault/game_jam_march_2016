@@ -6,8 +6,8 @@ angular.module('game_jam.combat_services', ['common.services'])
 	var TURNS_SHOWN = 10;
 
 	var TOGGLE_ATTACK = "ATTACK";
-	var TOGGLE_SPELL = "SPELL";
-	var TOGGLE_SPECIAL = "SPECIAL";
+	var TOGGLE_FIRE = "FIRE";
+	var TOGGLE_LIGHTNING = "LIGHTNING";
 
 	var COMBAT_WIN_STRING = "Victory!";
 	var COMBAT_LOSE_STRING = "You dead foo :-(";
@@ -88,9 +88,9 @@ angular.module('game_jam.combat_services', ['common.services'])
 						animation_services.attack_ranged(attackerDom, attackeeDom, projectile, damage, attackeeType === PLAYER);
 					}
 					break;
-				case TOGGLE_SPELL:
+				case TOGGLE_FIRE:
 					break;
-				case TOGGLE_SPECIAL:
+				case TOGGLE_LIGHTNING:
 					break;
 				default:
 					return;
@@ -162,11 +162,11 @@ angular.module('game_jam.combat_services', ['common.services'])
 		attackToggle: function() {
 			return TOGGLE_ATTACK;
 		},
-		spellToggle: function() {
-			return TOGGLE_SPELL;
+		fireToggle: function() {
+			return TOGGLE_FIRE;
 		},
-		specialToggle: function() {
-			return TOGGLE_SPECIAL;
+		lightningToggle: function() {
+			return TOGGLE_LIGHTNING;
 		},
 		newCombat: function(backgroundImg) {
 			combat =

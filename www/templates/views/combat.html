@@ -32,14 +32,14 @@
 						Attack
 					</p>
 				</div>
-				<div class="turn" style="height: {{::getWindowHeight()/3 - 5}}px; padding-top: {{::(getWindowHeight()/3 - 5)/2 - 20}}px;" ng-click="toggleMove(MOVE_SPELL)" ng-class="{'active-turn': isActiveMove(MOVE_SPELL)}">
+				<div class="turn" style="height: {{::getWindowHeight()/3 - 5}}px; padding-top: {{::(getWindowHeight()/3 - 5)/2 - 20}}px;" ng-click="toggleMove(MOVE_FIRE)" ng-class="{'active-turn': isActiveMove(MOVE_FIRE)}">
 					<p>
-						Spell
+						Fire Ball
 					</p>
 				</div>
-				<div class="turn" style="height: {{::getWindowHeight()/3 - 5}}px; padding-top: {{::(getWindowHeight()/3 - 5)/2 - 20}}px;" ng-class="{'active-turn': isActiveMove(MOVE_SPECIAL)}">
+				<div class="turn" style="height: {{::getWindowHeight()/3 - 5}}px; padding-top: {{::(getWindowHeight()/3 - 5)/2 - 20}}px;" ng-click="toggleMove(MOVE_LIGHTNING)" ng-class="{'active-turn': isActiveMove(MOVE_LIGHTNING)}">
 					<p>
-						Special
+						Lightning
 					</p>
 				</div>
 			</div>

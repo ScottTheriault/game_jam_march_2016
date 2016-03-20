@@ -10,8 +10,8 @@ angular.module('game_jam.controllers')
 	player_services.addEnemyPlayer(enemy_services.getById(0));
 
 	$scope.MOVE_ATTACK = combat_services.attackToggle();
-	$scope.MOVE_SPELL = combat_services.spellToggle();
-	$scope.MOVE_SPECIAL = combat_services.specialToggle();
+	$scope.MOVE_FIRE = combat_services.fireToggle();
+	$scope.MOVE_LIGHTNING = combat_services.lightningToggle();
 
 	combat_services.newCombat('img/background/combat/background_forest.png');
 
