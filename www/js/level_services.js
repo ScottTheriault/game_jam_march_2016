@@ -10,7 +10,7 @@ angular.module('game_jam.level_services', ['common.services'])
 			{type: TEXT_VIEW, text_index: 0},
 			{type: WALKING, walking_index: 0},
 			{type: WALKING, walking_index: 1},
-			{type: COMBAT, backgroundImage: 'img/background/combat/background_forest.png', enemy_ids: [1]}
+			{type: COMBAT, backgroundImage: 'img/background/combat/background_forest.png', enemy_ids: [1, 2]}
 		];
 	var index = -1;
 

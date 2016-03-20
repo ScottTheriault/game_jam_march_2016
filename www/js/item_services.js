@@ -108,8 +108,13 @@ angular.module('game_jam.item_services', ['common.services'])
 					items: []
 				},
 				{
-					id: 16, slot: 'head', name: 'evil ball', img: 'img/enemy/heads/basic_enemy_orc_warrior.png', style: 'height: 70px;',
-					attack: 1, defense: 10, spell_bonus: 0,
+					id: 16, slot: 'head', name: 'orc warrior', img: 'img/enemy/heads/basic_enemy_orc_warrior.png', style: 'height: 70px;',
+					attack: 1, defense: 16, spell_bonus: 0,
+					items: []
+				},
+				{
+					id: 17, slot: 'head', name: 'evil ball', img: 'img/enemy/heads/basic_enemy_orc_ranger.png', style: 'height: 70px;',
+					attack: 7, defense: 7, spell_bonus: 0,
 					items: []
 				}
 			];
