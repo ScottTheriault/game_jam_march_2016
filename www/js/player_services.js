@@ -20,7 +20,6 @@ angular.module('game_jam.player_services', ['common.services', 'game_jam.item_se
 	}
 
 	function getItemHealth(item) {
-		console.log(item);
 		if (item === null) {
 			return 0;
 		}

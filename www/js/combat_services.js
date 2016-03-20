@@ -99,7 +99,21 @@ angular.module('game_jam.combat_services', ['common.services'])
 				combat.toggledMove = '';
 				combat.turns.shift();
 				addTurn();
+				if (combat.turns[0].type === ENEMY) {
+					enemyPlay();
+				}
 			}, 3500);
+		}
+	}
+
+	function enemyPlay() {
+		var players = player_services.getPlayers();
+		var index = Math.floor(Math.random() * players.length);
+		if (players[index].currentHealth <= 0) {
+			enemyPlay();
+		} else {
+			combat.toggledMove = TOGGLE_ATTACK;
+			attack(players[index]);
 		}
 	}
 

@@ -44,7 +44,6 @@ angular.module('game_jam.animation_services', ['common.services'])
 		var dmgDom = dom.find('.damage');
 		dmgDom.css("display", "inline-block");
 		dmgDom.text(damage);
-		console.log(dmgDom);
 		$timeout(function() {
 			dmgDom.hide();
 		}, 2000);
