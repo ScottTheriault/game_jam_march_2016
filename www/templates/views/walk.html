@@ -2,7 +2,7 @@
 	<ion-content class="noHeader" scroll="false">
 		<div class="fill" style="height: {{::getWindowHeight()}}px; background-image: url({{getBackgroundImg()}});">
 			<div class="players no-health">
-				<div ng-repeat="player in getPlayerArray()" id="player{{player.index}}">
+				<div ng-repeat="player in getPlayerArray()" id="walkingPlayer">
 					<div ng-include="'templates/fragments/player.html'"></div>
 				</div>
 			</div>

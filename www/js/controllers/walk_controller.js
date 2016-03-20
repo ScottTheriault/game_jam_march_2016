@@ -1,6 +1,6 @@
 angular.module('game_jam.controllers')
 
-.controller('WalkCtrl', function($scope, walking_services, player_services) {
+.controller('WalkCtrl', function($scope, walking_services, player_services, animation_services) {
 	$scope.getBackgroundImg = function() {
 		return walking_services.getBackgroundImg();
 	}
@@ -11,9 +11,9 @@ angular.module('game_jam.controllers')
 
 	$scope.next = function() {
 		if (walking_services.getEnemy() === null || walking_services.getEnemyDead()) {
-			//TODO walk
+			animation_services.walk($('#walkingPlayer'));
 		}
 
-		$scope.goNextLevel();
+		//$scope.goNextLevel();
 	}
 });

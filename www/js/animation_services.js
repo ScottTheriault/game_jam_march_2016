@@ -88,6 +88,9 @@ angular.module('game_jam.animation_services', ['common.services'])
 		},
 		die: function(attackeeDom) {
 			rotate(attackeeDom, 90);
+		}, walk: function(dom) {
+			var position = dom.position();
+			move(dom, position.top, position.left+1000, 2000, false);
 		}
 	}
 }]);
