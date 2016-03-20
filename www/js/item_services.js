@@ -49,7 +49,14 @@ angular.module('game_jam.item_services', ['common.services'])
 				},
 				{
 					id: 6, slot: 'arm', name: 'basic warrior arm', img: 'img/arms/basic_warrior_arm.png', style: 'width: 25px; position: absolute; top: 26px; left: 17px',
-					attack: 1, defense: 5, spell_bonus: 0,
+					attack: 2, defense: 0, spell_bonus: 0,
+					items: [
+						{slot: 'weapon', item: null},
+					]
+				},
+				{
+					id: 7, slot: 'weapon', name: 'basic warrior sword', img: 'img/weapons/basic_warrior_sword.png', style: 'width: 14px; position: absolute; top: 0px; left: 29px',
+					attack: 5, defense: 1, spell_bonus: 0,
 					items: []
 				}
 			];
