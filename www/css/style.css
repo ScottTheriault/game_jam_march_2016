@@ -107,6 +107,7 @@ ion-content {
 }
 
 .damage {
+	white-space: nowrap;
 	float: left;
 	position: absolute;
 	top: -35px;
@@ -119,6 +120,7 @@ ion-content {
 }
 
 .health {
+	white-space: nowrap;
 	float: left;
 	display: inline;
 	position: relative;

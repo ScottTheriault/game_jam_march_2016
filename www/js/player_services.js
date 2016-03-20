@@ -25,9 +25,9 @@ angular.module('game_jam.player_services', ['common.services', 'game_jam.item_se
 		}
 		var subDamage = 0;
 		for (var i = 0; i < item.items.length; i++) {
-			subDamage += getItemDamage(item.items[i].item);
+			subDamage += getItemHealth(item.items[i].item);
 		}
-		return item.attack + subDamage;
+		return item.defense + subDamage;
 	}
 
 	function setPlayerCurrentHealth(player) {
