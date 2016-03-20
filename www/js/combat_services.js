@@ -94,6 +94,12 @@ angular.module('game_jam.combat_services', ['common.services'])
 					animation_services.die(attackeeDom);
 				}
 			}, 2500);
+
+			$timeout(function() {
+				combat.toggledMove = '';
+				combat.turns.shift();
+				addTurn();
+			}, 3500);
 		}
 	}
 
