@@ -1,6 +1,6 @@
 angular.module('game_jam.controllers')
 
-.controller('MainMenuCtrl', function($scope, player_services, text_services, $state) {
+.controller('MainMenuCtrl', function($scope, player_services, text_services, level_services) {
 	$scope.showLoadGames = false;
 
 	$scope.getBackgroundImg = function() {
@@ -16,7 +16,8 @@ angular.module('game_jam.controllers')
 		player_services.setRanger();
 		player_services.setMage();
 
+		level_services.newGame();
 		text_services.setNewGameText();
-		$state.go('tab.text_view');
+		$scope.goNextLevel();
 	}
 });
