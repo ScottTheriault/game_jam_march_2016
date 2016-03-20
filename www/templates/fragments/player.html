@@ -1,5 +1,13 @@
 <div class="player" align="center">
+	<script type="text/ng-template"  id="player-item-render.html">
+		<img src="{{item.item.img}}" style="{{item.item.style}}"/>
+
+		<div ng-repeat="item in item.item.items" ng-include="'player-item-render.html'"></div>
+	</script>
+
 	<p class="damage" hidden="true"></p>
 	<p ng-if="player.currentHealth > 0" class="health">{{player.currentHealth}} / {{player.maxHealth}}</p>
 	<img src="{{player.head.img}}" class="player-head"/>
+
+	<div ng-repeat="item in player.head.items" ng-include="'player-item-render.html'"></div>
 </div>
