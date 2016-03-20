@@ -173,3 +173,23 @@ ion-content {
 	border-color: #FFF555;
 	box-shadow: 2px 5px 1px BLACK;
 }
+
+/* text view */
+.text-view {
+	width: 100%;
+	background-color: #221f1f;
+	position: absolute;
+}
+
+.text-view p {
+	color: WHITE;
+	font-size: 17px;
+	padding-top: 25px;
+}
+
+.text-view button {
+	background-color: transparent;
+	border: none;
+	color: WHITE;
+	font-size: 20px;
+}

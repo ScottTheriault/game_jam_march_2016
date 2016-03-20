@@ -10,6 +10,9 @@ angular.module('game_jam.text_services', ['common.services'])
 				"Only with the power of teamwork will you manage to defeat Qenoff"
 			]
 			index = 0;
+		},
+		getText: function() {
+			return textStream[index];
 		}
 	}
 }]);
