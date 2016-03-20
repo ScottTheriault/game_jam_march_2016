@@ -21,6 +21,9 @@ angular.module('game_jam.walking_services', ['common.services', 'game_jam.item_s
 				//TODO when dead
 			}
 			index = 0;
+		},
+		getBackgroundImg: function() {
+			return level.backgroundImage;
 		}
 	}
 }]);
