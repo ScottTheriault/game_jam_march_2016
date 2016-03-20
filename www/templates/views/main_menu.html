@@ -1,4 +1,13 @@
 <ion-view hide-nav-bar="true">
 	<ion-content class="noHeader" scroll="false">
+		<div ng-if="!showLoadGames" align="center" class="main-menu" style="height: {{::getWindowHeight()}}px; background-image: url({{getBackgroundImg()}});">
+			<button>New Game</button>
+			<button ng-click="toggleShowLoadGames()">Load Game</button>
+		</div>
+
+		<div ng-if="showLoadGames" align="center" class="main-menu" style="height: {{::getWindowHeight()}}px; background-image: url({{getBackgroundImg()}});">
+			<button ng-click="toggleShowLoadGames()">Cancel</button>
+			<!-- TODO load game imgs -->
+		</div>
 	</ion-content>
 </ion-view>

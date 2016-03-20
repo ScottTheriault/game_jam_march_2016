@@ -154,3 +154,22 @@ ion-content {
 .large_projectile {
 	height: 25px;
 }
+
+/* Main Menu */
+.main-menu {
+	width: 100%;
+	background-size: 100% 100%;
+}
+
+.main-menu button {
+	display: block;
+	font-size: 25px;
+	width: 200px;
+	position: relative;
+	top: 50px;
+	margin-bottom: 50px;
+	border-radius: 10px;
+	background-color: #FFF555;
+	border-color: #FFF555;
+	box-shadow: 2px 5px 1px BLACK;
+}
