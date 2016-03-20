@@ -38,6 +38,20 @@ angular.module('game_jam.player_services', ['common.services', 'game_jam.item_se
 	}
 
 	return {
+		setKnight: function() {
+			player =
+				{
+					isPlayer: true,
+					id: 0,
+					index: 0,
+					name: "Scott",
+					level: 1,
+					head: item_services.getById(0)
+				};
+			item_services.addItem(player.head, 4);
+			setPlayerCurrentHealth(player);
+			players.push(player);
+		},
 		setNewPlayer: function() {
 			player = {isPlayer: true};
 			switch (players.length) {
