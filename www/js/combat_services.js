@@ -218,6 +218,8 @@ angular.module('game_jam.combat_services', ['common.services'])
 		},
 		getCombatOverString: function() {
 			return combat.overString;
+		}, iWin: function() {
+			return combat.overString === COMBAT_WIN_STRING;
 		}
 	}
 }]);

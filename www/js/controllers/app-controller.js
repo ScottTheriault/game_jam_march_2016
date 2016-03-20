@@ -12,4 +12,8 @@ myApp = angular.module('game_jam.controllers', ['game_jam.util'])
 		var nextState = level_services.prepareNextLevelGetState();
 		$state.go(nextState);
 	}
+
+	$scope.goMain = function() {
+		$state.go('tab.main_menu');
+	}
 });

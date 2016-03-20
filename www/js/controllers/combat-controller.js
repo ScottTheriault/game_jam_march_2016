@@ -36,4 +36,12 @@ angular.module('game_jam.controllers')
 	$scope.getCombatOverString = function() {
 		return combat_services.getCombatOverString();
 	}
+
+	$scope.next = function() {
+		if (combat_services.iWin()) {
+			$scope.goNextLevel();
+		} else {
+			$scope.goMain();
+		}
+	}
 });
