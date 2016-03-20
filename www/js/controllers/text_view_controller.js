@@ -7,5 +7,9 @@ angular.module('game_jam.controllers')
 
 	$scope.goNext = function() {
 		var newIndex = text_services.next();
+
+		if (newIndex === 0) {
+			//TODO next level
+		}
 	}
 });
