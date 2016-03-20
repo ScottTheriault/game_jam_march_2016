@@ -1,6 +1,6 @@
 angular.module('game_jam.combat_services', ['common.services'])
 
-.factory('combat_services', ['utility', 'player_services', 'animation_services', function(utility, player_services, animation_services) {
+.factory('combat_services', ['utility', 'player_services', 'animation_services', '$timeout', function(utility, player_services, animation_services, $timeout) {
 	var PLAYER = 'PLAYER';
 	var ENEMY = 'ENEMY';
 	var TURNS_SHOWN = 10;
@@ -88,7 +88,12 @@ angular.module('game_jam.combat_services', ['common.services'])
 					return;
 			}
 
-			attackee.currentHealth -= damage;
+			$timeout(function() {
+				attackee.currentHealth -= damage;
+				if (attackee.currentHealth <= 0) {
+					animation_services.die(attackeeDom);
+				}
+			}, 2500);
 		}
 	}
 

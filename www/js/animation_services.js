@@ -17,6 +17,17 @@ angular.module('game_jam.animation_services', ['common.services'])
 		});
 	}
 
+	function rotate(dom, deg) {
+		$({deg: 0}).animate({deg: deg}, {
+			duration: 500,
+			step: function(now) {
+				dom.css({
+					transform: 'rotate(' + now + 'deg)'
+				});
+			}
+		});
+	}
+
 	function shake(dom, invert) {
 		var top = dom.position().top;
 		var left = dom.position().left;
@@ -56,6 +67,8 @@ angular.module('game_jam.animation_services', ['common.services'])
 			$timeout(function() {
 				move(attacker, attackerPosition.top, attackerPosition.left, 1000, invert);
 			}, 2000);
+		}, die: function(attackeeDom) {
+			rotate(attackeeDom, 90);
 		}
 	}
 }]);
