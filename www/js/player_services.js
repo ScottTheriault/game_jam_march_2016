@@ -45,13 +45,27 @@ angular.module('game_jam.player_services', ['common.services', 'game_jam.item_se
 					id: 0,
 					index: 0,
 					name: "Scott",
-					level: 1,
+					level: 5,
 					head: item_services.getById(0)
 				};
 			item_services.addItem(player.head, 4);
 			item_services.addItem(player.head, 5);
 			item_services.addItem(player.head, 6);
 			item_services.addItem(player.head, 7);
+			setPlayerCurrentHealth(player);
+			players.push(player);
+		},
+		setRanger: function() {
+			player =
+				{
+					isPlayer: true,
+					id: 0,
+					index: 0,
+					name: "Kaylin",
+					level: 5,
+					head: item_services.getById(1)
+				};
+			item_services.addItem(player.head, 8);
 			setPlayerCurrentHealth(player);
 			players.push(player);
 		},

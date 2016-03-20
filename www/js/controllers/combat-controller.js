@@ -2,7 +2,7 @@ angular.module('game_jam.controllers')
 
 .controller('CombatCtrl', function($scope, combat_services, player_services, enemy_services) {
 	player_services.setKnight();
-	player_services.setNewPlayer();
+	player_services.setRanger();
 	player_services.setNewPlayer();
 
 	player_services.addEnemyPlayer(enemy_services.getById(0));
