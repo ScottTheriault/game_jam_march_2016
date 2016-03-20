@@ -58,6 +58,16 @@ angular.module('game_jam', ['ionic','ionic.service.core', 'game_jam.controllers'
 		}
 	})
 
+	.state('tab.walk', {
+		url: '/walk',
+		views: {
+			'tab-walk': {
+				templateUrl: 'templates/views/walk.html',
+				controller: 'WalkCtrl'
+			}
+		}
+	})
+
 	.state('tab.combat', {
 		url: '/combat',
 		views: {
