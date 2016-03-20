@@ -85,7 +85,7 @@ angular.module('game_jam.combat_services', ['common.services'])
 					if (projectile === null) {
 						animation_services.attack(attackerDom, attackeeDom, damage, attackeeType === PLAYER);
 					} else {
-						//todo ranged
+						animation_services.attack_ranged(attackerDom, attackeeDom, projectile, damage, attackeeType === PLAYER);
 					}
 					break;
 				case TOGGLE_SPELL:
