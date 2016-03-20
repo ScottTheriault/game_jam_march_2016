@@ -9,7 +9,7 @@ angular.module('game_jam.level_services', ['common.services'])
 	var index = -1;
 
 	function nextTextView() {
-		text_services.setNewGameText();
+		text_services.setByIndex(levels[index].text_index);
 		return 'tab.text_view';
 	}
 
