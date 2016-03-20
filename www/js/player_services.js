@@ -59,8 +59,8 @@ angular.module('game_jam.player_services', ['common.services', 'game_jam.item_se
 			player =
 				{
 					isPlayer: true,
-					id: 0,
-					index: 0,
+					id: 1,
+					index: 1,
 					name: "Kaylin",
 					level: 5,
 					head: item_services.getById(1)
