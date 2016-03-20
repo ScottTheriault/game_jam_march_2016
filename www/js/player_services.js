@@ -103,6 +103,7 @@ angular.module('game_jam.player_services', ['common.services', 'game_jam.item_se
 			item_services.addItem(player.head, 12);
 			item_services.addItem(player.head, 13);
 			item_services.addItem(player.head, 14);
+			item_services.addItem(player.head, 15);
 			players.push(player);
 		},
 		setNewPlayer: function() {

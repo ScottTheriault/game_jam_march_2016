@@ -101,6 +101,11 @@ angular.module('game_jam.item_services', ['common.services'])
 					id: 14, slot: 'weapon', ranged: true, projectile_img: 'img/projectile/staff_shot.png', name: 'basic warrior sword', img: 'img/weapons/basic_mage_staff.png', style: 'width: 10px; position: absolute; top: 10px; left: 35px',
 					attack: 0, defense: 1, spell_bonus: 9,
 					items: []
+				},
+				{
+					id: 4, slot: 'hat', name: 'basic mage hat', img: 'img/hats/basic_hat_mage.png', style: 'width: 35px; position: absolute; top: -5px; left: 1px',
+					attack: 0, defense: 1, spell_bonus: 2,
+					items: []
 				}
 			];
 
