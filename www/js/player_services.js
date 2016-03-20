@@ -37,6 +37,23 @@ angular.module('game_jam.player_services', ['common.services', 'game_jam.item_se
 		player.currentHealth = health;
 	}
 
+	function getProjectile(item) {
+		if (item === null) {
+			return null;
+		}
+		if (item.ranged) {
+			return item.projectile_img;
+		}
+
+		for (var i = 0; i < item.items.length; i++) {
+			var projectile = getProjectile(item.items[i].item);
+			if (projectile !== null) {
+				return projectile;
+			}
+		}
+		return null;
+	}
+
 	return {
 		setKnight: function() {
 			player =
@@ -125,6 +142,9 @@ angular.module('game_jam.player_services', ['common.services', 'game_jam.item_se
 			var damage = player.level * DMG_PER_LVL;
 			damage += getItemDamage(player.head);
 			return damage;
+		},
+		getProjectile: function(player) {
+			return getProjectile(player.head);
 		}
 	}
 }]);
