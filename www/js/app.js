@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('game_jam', ['ionic','ionic.service.core', 'game_jam.controllers', 'game_jam.util', 'game_jam.player_services', 'game_jam.enemy_services', 'game_jam.item_services', 'game_jam.combat_services', 'game_jam.animation_services', 'game_jam.text_services'])
+angular.module('game_jam', ['ionic','ionic.service.core', 'game_jam.controllers', 'game_jam.util', 'game_jam.player_services', 'game_jam.enemy_services', 'game_jam.item_services', 'game_jam.combat_services', 'game_jam.animation_services', 'game_jam.text_services', 'game_jam.level_services'])
 
 .run(function($ionicPlatform, $rootScope) {
 	$ionicPlatform.ready(function() {
