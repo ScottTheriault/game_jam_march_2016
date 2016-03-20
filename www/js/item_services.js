@@ -74,7 +74,7 @@ angular.module('game_jam.item_services', ['common.services'])
 					]
 				},
 				{
-					id: 10, slot: 'weapon', name: 'basic warrior sword', img: 'img/weapons/basic_ranger_bow.png', style: 'width: 10px; position: absolute; top: 12px; left: 30px',
+					id: 10, slot: 'weapon', ranged: 'true', projectile_img: 'img/projectile/arrow.png', name: 'basic warrior sword', img: 'img/weapons/basic_ranger_bow.png', style: 'width: 10px; position: absolute; top: 12px; left: 30px',
 					attack: 9, defense: 1, spell_bonus: -1,
 					items: []
 				},
