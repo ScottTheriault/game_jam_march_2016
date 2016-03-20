@@ -8,6 +8,12 @@ angular.module('game_jam.walking_services', ['common.services', 'game_jam.item_s
 							enemy_id: null,
 							enemy: null,
 							enemy_dead: false
+						},
+						{
+							backgroundImage: 'img/background/combat/background_forest.png',
+							enemy_id: 0,
+							enemy: null,
+							enemy_dead: false
 						}
 					]
 	var level = {};

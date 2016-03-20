@@ -1,6 +1,6 @@
 angular.module('game_jam.controllers')
 
-.controller('WalkCtrl', function($scope, walking_services, player_services, animation_services) {
+.controller('WalkCtrl', function($scope, $timeout, walking_services, player_services, animation_services) {
 	$scope.getBackgroundImg = function() {
 		return walking_services.getBackgroundImg();
 	}
@@ -9,11 +9,17 @@ angular.module('game_jam.controllers')
 		return [player_services.getPlayers()[0]];
 	}
 
+	$scope.getEnemyArray = function() {
+		return [walking_services.getEnemy()];
+	}
+
 	$scope.next = function() {
 		if (walking_services.getEnemy() === null || walking_services.getEnemyDead()) {
 			animation_services.walk($('#walkingPlayer'));
 		}
 
-		//$scope.goNextLevel();
+		$timeout(function() {
+			$scope.goNextLevel();
+		}, 2000);
 	}
 });

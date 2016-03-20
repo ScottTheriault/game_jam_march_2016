@@ -6,7 +6,8 @@ angular.module('game_jam.level_services', ['common.services'])
 	var levels =
 		[
 			{type: TEXT_VIEW, text_index: 0},
-			{type: WALKING, walking_index: 0}
+			{type: WALKING, walking_index: 0},
+			{type: WALKING, walking_index: 1}
 		];
 	var index = -1;
 

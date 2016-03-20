@@ -7,7 +7,7 @@
 				</div>
 			</div>
 			<div class="players enemies" ng-click="next()">
-				<div ng-repeat="player in getEnemies()" id="enemy{{player.index}}">
+				<div ng-repeat="player in getEnemyArray()" id="enemy{{player.index}}">
 					<div ng-include="'templates/fragments/player.html'"></div>
 				</div>
 			</div>

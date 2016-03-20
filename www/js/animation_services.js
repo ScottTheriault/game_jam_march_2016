@@ -91,6 +91,10 @@ angular.module('game_jam.animation_services', ['common.services'])
 		}, walk: function(dom) {
 			var position = dom.position();
 			move(dom, position.top, position.left+1000, 2000, false);
+
+			$timeout(function() {
+				move(dom, position.top, position.left, 1, false);
+			}, 2000);
 		}
 	}
 }]);
