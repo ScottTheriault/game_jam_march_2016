@@ -24,6 +24,10 @@ angular.module('game_jam.walking_services', ['common.services', 'game_jam.item_s
 		},
 		getBackgroundImg: function() {
 			return level.backgroundImage;
+		}, getEnemy: function() {
+			return level.enemy;
+		}, getEnemyDead: function() {
+			return level.enemy_dead;
 		}
 	}
 }]);

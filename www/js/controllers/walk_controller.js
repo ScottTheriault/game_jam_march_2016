@@ -10,5 +10,10 @@ angular.module('game_jam.controllers')
 	}
 
 	$scope.next = function() {
+		if (walking_services.getEnemy() === null || walking_services.getEnemyDead()) {
+			//TODO walk
+		}
+
+		$scope.goNextLevel();
 	}
 });
