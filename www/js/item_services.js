@@ -53,16 +53,23 @@ angular.module('game_jam.item_services', ['common.services'])
 					items: []
 				}
 			];
+
+	function addItem(holder_item, item_id) {
+		new_item = JSON.parse(JSON.stringify(items[item_id]));
+		for (var i = 0; i < holder_item.items.length; i++) {
+			if (holder_item.items[i].slot === new_item.slot) {
+				holder_item.items[i].item = new_item;
+				return;
+			} else {
+				addItem(holder_item.items[i].item, item_id);
+			}
+		}
+	}
 	return {
 		getById: function(id) {
 			return JSON.parse(JSON.stringify(items[id]));
 		}, addItem: function(holder_item, item_id) {
-			new_item = JSON.parse(JSON.stringify(items[item_id]));
-			for (var i = 0; i < holder_item.items.length; i++) {
-				if (holder_item.items[i].slot === new_item.slot) {
-					holder_item.items[i].item = new_item;
-				}
-			}
+			addItem(holder_item, item_id);
 		}
 	}
 }]);
