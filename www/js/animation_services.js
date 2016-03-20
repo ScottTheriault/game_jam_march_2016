@@ -75,7 +75,7 @@ angular.module('game_jam.animation_services', ['common.services'])
 			attacker.append(html);
 			var projDom = $('#tempProjectile'+bonus_id);
 			var left = attackeePosition.left + (attackerPosition.left > attackeePosition.left ? 50 : -50) - attackerPosition.left;
-			move(projDom, attackeePosition.top - attackerPosition.top, left, 1000, false);
+			move(projDom, attackeePosition.top - attackerPosition.top, left, 1000, invert);
 
 			$timeout(function() {
 				popDamage(attackee, damage);
