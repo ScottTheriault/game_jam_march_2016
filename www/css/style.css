@@ -93,6 +93,7 @@ ion-content {
 	float: left;
 	height: 90px;
 	width: 40px;
+	position: relative;
 }
 
 .enemies, .enemies .damage, .enemies .health {
