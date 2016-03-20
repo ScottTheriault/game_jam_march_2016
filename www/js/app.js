@@ -48,6 +48,16 @@ angular.module('game_jam', ['ionic','ionic.service.core', 'game_jam.controllers'
 		}
 	})
 
+	.state('tab.text_view', {
+		url: '/text_view',
+		views: {
+			'tab-text-view': {
+				templateUrl: 'templates/views/text_view.html',
+				controller: 'TextViewCtrl'
+			}
+		}
+	})
+
 	.state('tab.combat', {
 		url: '/combat',
 		views: {
