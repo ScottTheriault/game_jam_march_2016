@@ -20,6 +20,12 @@ angular.module('game_jam.enemy_services', ['common.services'])
 					name: 'orc ranger',
 					level: 5,
 					head: item_services.getById(17)
+				},
+				{
+					id: 3,
+					name: 'orc mage',
+					level: 5,
+					head: item_services.getById(18)
 				}
 			];
 	return {
