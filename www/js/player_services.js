@@ -2,6 +2,7 @@ angular.module('game_jam.player_services', ['common.services', 'game_jam.item_se
 
 .factory('player_services', ['utility', 'item_services', function(utility, item_services) {
 	var DMG_PER_LVL = 2;
+	var SLELL_DMG_PER_LVL = 2;
 	var HEALTH_PER_LVL = 2;
 
 	var players = [];
@@ -17,6 +18,17 @@ angular.module('game_jam.player_services', ['common.services', 'game_jam.item_se
 			subDamage += getItemDamage(item.items[i].item);
 		}
 		return item.attack + subDamage;
+	}
+
+	function getItemSpellDamage(item) {
+		if (item === null) {
+			return 0;
+		}
+		var subDamage = 0;
+		for (var i = 0; i < item.items.length; i++) {
+			subDamage += getItemSpellDamage(item.items[i].item);
+		}
+		return item.spell_bonus + subDamage;
 	}
 
 	function getItemHealth(item) {
@@ -158,6 +170,11 @@ angular.module('game_jam.player_services', ['common.services', 'game_jam.item_se
 		getBaseDamage: function(player) {
 			var damage = player.level * DMG_PER_LVL;
 			damage += getItemDamage(player.head);
+			return damage;
+		},
+		getBaseSpellDamage: function(player) {
+			var damage = player.level * SLELL_DMG_PER_LVL;
+			damage += getItemSpellDamage(player.head);
 			return damage;
 		},
 		getProjectile: function(player) {

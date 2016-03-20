@@ -85,10 +85,12 @@ angular.module('game_jam.combat_services', ['common.services'])
 					if (projectile === null) {
 						animation_services.attack(attackerDom, attackeeDom, damage, attackeeType === PLAYER);
 					} else {
-						animation_services.attack_ranged(attackerDom, attackeeDom, projectile, damage, attackeeType === PLAYER);
+						animation_services.attack_ranged(attackerDom, attackeeDom, projectile, damage, false, attackeeType === PLAYER);
 					}
 					break;
 				case TOGGLE_FIRE:
+					damage = player_services.getBaseSpellDamage(attacker);
+					animation_services.attack_ranged(attackerDom, attackeeDom, 'img/projectile/fire_ball.png', damage, true, attackeeType === PLAYER);
 					break;
 				case TOGGLE_LIGHTNING:
 					break;

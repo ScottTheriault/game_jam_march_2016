@@ -150,3 +150,7 @@ ion-content {
 	position: absolute;
 	top: 26px;
 }
+
+.large_projectile {
+	height: 25px;
+}
