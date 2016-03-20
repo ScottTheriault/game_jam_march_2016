@@ -38,6 +38,16 @@ angular.module('game_jam', ['ionic','ionic.service.core', 'game_jam.controllers'
 		controller: 'AppCtrl'
 	})
 
+	.state('tab.main_menu', {
+		url: '/main_menu',
+		views: {
+			'tab-main-menu': {
+				templateUrl: 'templates/views/main_menu.html',
+				controller: 'MainMenuCtrl'
+			}
+		}
+	})
+
 	.state('tab.combat', {
 		url: '/combat',
 		views: {
@@ -49,6 +59,6 @@ angular.module('game_jam', ['ionic','ionic.service.core', 'game_jam.controllers'
 	})
 
 	// if none of the above states are matched, use this as the fallback
-	$urlRouterProvider.otherwise('/tab/combat');
+	$urlRouterProvider.otherwise('/tab/main_menu');
 
 });
