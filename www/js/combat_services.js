@@ -58,8 +58,16 @@ angular.module('game_jam.combat_services', ['common.services'])
 		turns.push(turn);
 	}
 
-	function attack(attackee) {
+	function attack(attackee, aoe_end) {
 		if (attackee.currentHealth <= 0) {
+			if ((typeof aoe_end === 'undefined' || aoe_end)) {
+				$timeout(function() {
+					nextTurn();
+					if (combat.turns[0].type === ENEMY) {
+						enemyPlay();
+					}
+				}, 4500);
+			}
 			return;
 		}
 
@@ -85,14 +93,16 @@ angular.module('game_jam.combat_services', ['common.services'])
 					if (projectile === null) {
 						animation_services.attack(attackerDom, attackeeDom, damage, attackeeType === PLAYER);
 					} else {
-						animation_services.attack_ranged(attackerDom, attackeeDom, projectile, damage, false, attackeeType === PLAYER);
+						animation_services.attack_ranged(attackee.index, attackerDom, attackeeDom, projectile, damage, false, attackeeType === PLAYER);
 					}
 					break;
 				case TOGGLE_FIRE:
 					damage = player_services.getBaseSpellDamage(attacker);
-					animation_services.attack_ranged(attackerDom, attackeeDom, 'img/projectile/fire_ball.png', damage, true, attackeeType === PLAYER);
+					animation_services.attack_ranged(attackee.index, attackerDom, attackeeDom, 'img/projectile/fire_ball.png', damage, true, attackeeType === PLAYER);
 					break;
 				case TOGGLE_LIGHTNING:
+					damage = parseInt(player_services.getBaseSpellDamage(attacker)/3);
+					animation_services.attack_ranged(attackee.index, attackeeDom, attackeeDom, 'img/projectile/lightning_bolt.png', damage, true, attackeeType === PLAYER);
 					break;
 				default:
 					return;
@@ -128,7 +138,7 @@ angular.module('game_jam.combat_services', ['common.services'])
 					combat.overString = COMBAT_LOSE_STRING;
 				}
 
-				if (!combat.overString) {
+				if (!combat.overString && (typeof aoe_end === 'undefined' || aoe_end)) {
 					nextTurn();
 					if (combat.turns[0].type === ENEMY) {
 						enemyPlay();
@@ -197,7 +207,14 @@ angular.module('game_jam.combat_services', ['common.services'])
 			return combat.toggledMove;
 		},
 		attackTarget: function(player) {
-			attack(player);
+			if (combat.toggledMove === TOGGLE_LIGHTNING) {
+				var enemies = player_services.getEnemies();
+				for (var i = 0; i < enemies.length; i++) {
+					attack(enemies[i], i === enemies.length - 1);
+				}
+			} else {
+				attack(player);
+			}
 		},
 		getCombatOverString: function() {
 			return combat.overString;

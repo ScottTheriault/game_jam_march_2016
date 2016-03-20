@@ -54,7 +54,6 @@ angular.module('game_jam.animation_services', ['common.services'])
 			var attackerPosition = attacker.position();
 			var attackeePosition = attackee.position();
 
-			console.log(attackeePosition);
 			var left = attackeePosition.left + (attackerPosition.left > attackeePosition.left ? 50 : -50);
 
 			move(attacker, attackeePosition.top, left, 1000, invert);
@@ -68,15 +67,13 @@ angular.module('game_jam.animation_services', ['common.services'])
 				move(attacker, attackerPosition.top, attackerPosition.left, 1000, invert);
 			}, 2000);
 		},
-		attack_ranged: function(attacker, attackee, projectile, damage, isLarge, invert) {
+		attack_ranged: function(bonus_id, attacker, attackee, projectile, damage, isLarge, invert) {
 			var attackerPosition = attacker.position();
 			var attackeePosition = attackee.position();
 
-			console.log(attackeePosition);
-			var html = '<img src="' + projectile + '" class="projectile ' + (isLarge ? 'large_projectile' : '') + '" id="tempProjectile"/>';
+			var html = '<img src="' + projectile + '" class="projectile ' + (isLarge ? 'large_projectile' : '') + '" id="tempProjectile'+bonus_id+'"/>';
 			attacker.append(html);
-			var projDom = $('#tempProjectile');
-			console.log(projDom);
+			var projDom = $('#tempProjectile'+bonus_id);
 			var left = attackeePosition.left + (attackerPosition.left > attackeePosition.left ? 50 : -50) - attackerPosition.left;
 			move(projDom, attackeePosition.top - attackerPosition.top, left, 1000, false);
 
