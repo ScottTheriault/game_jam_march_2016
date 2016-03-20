@@ -11,7 +11,7 @@ angular.module('game_jam.walking_services', ['common.services', 'game_jam.item_s
 						},
 						{
 							backgroundImage: 'img/background/combat/background_forest.png',
-							enemy_id: 0,
+							enemy_id: 1,
 							enemy: null,
 							enemy_dead: false
 						}
@@ -22,7 +22,6 @@ angular.module('game_jam.walking_services', ['common.services', 'game_jam.item_s
 		setByIndex: function(i) {
 			level = JSON.parse(JSON.stringify(walkingLevels[i]));
 			if (level.enemy_id !== null) {
-				console.log(level.enemy_id);
 				level.enemy = enemy_services.getById(level.enemy_id);
 				//TODO when dead
 			}

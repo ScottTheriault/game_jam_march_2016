@@ -103,8 +103,13 @@ angular.module('game_jam.item_services', ['common.services'])
 					items: []
 				},
 				{
-					id: 4, slot: 'hat', name: 'basic mage hat', img: 'img/hats/basic_hat_mage.png', style: 'width: 35px; position: absolute; top: -5px; left: 1px',
+					id: 15, slot: 'hat', name: 'basic mage hat', img: 'img/hats/basic_hat_mage.png', style: 'width: 35px; position: absolute; top: -5px; left: 1px',
 					attack: 0, defense: 1, spell_bonus: 2,
+					items: []
+				},
+				{
+					id: 16, slot: 'head', name: 'evil ball', img: 'img/enemy/heads/basic_enemy_orc_warrior.png', style: 'height: 70px;',
+					attack: 1, defense: 10, spell_bonus: 0,
 					items: []
 				}
 			];

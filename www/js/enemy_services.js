@@ -4,10 +4,16 @@ angular.module('game_jam.enemy_services', ['common.services'])
 	var enemies =
 			[
 				{
-					id: 1,
+					id: 0,
 					name: 'evil ball',
 					level: 1,
 					head: item_services.getById(3)
+				},
+				{
+					id: 1,
+					name: 'orc warrior',
+					level: 5,
+					head: item_services.getById(16)
 				}
 			];
 	return {

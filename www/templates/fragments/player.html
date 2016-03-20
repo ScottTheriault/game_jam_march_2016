@@ -7,7 +7,7 @@
 
 	<p class="damage" hidden="true"></p>
 	<p ng-if="player.currentHealth > 0" class="health">{{player.currentHealth}} / {{player.maxHealth}}</p>
-	<img src="{{player.head.img}}" class="player-head"/>
+	<img src="{{player.head.img}}" class="player-head" style="{{player.head.style}}"/>
 
 	<div ng-repeat="item in player.head.items" ng-include="'player-item-render.html'"></div>
 </div>
