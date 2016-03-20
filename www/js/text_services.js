@@ -13,6 +13,13 @@ angular.module('game_jam.text_services', ['common.services'])
 		},
 		getText: function() {
 			return textStream[index];
+		},
+		next: function() {
+			index++;
+			if (index === textStream.length) {
+				index = 0;
+			}
+			return index;
 		}
 	}
 }]);

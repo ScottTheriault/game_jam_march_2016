@@ -4,4 +4,8 @@ angular.module('game_jam.controllers')
 	$scope.getText = function() {
 		return text_services.getText();
 	}
+
+	$scope.goNext = function() {
+		var newIndex = text_services.next();
+	}
 });
