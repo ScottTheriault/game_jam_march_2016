@@ -49,6 +49,7 @@ angular.module('game_jam.player_services', ['common.services', 'game_jam.item_se
 					head: item_services.getById(0)
 				};
 			item_services.addItem(player.head, 4);
+			item_services.addItem(player.head, 5);
 			setPlayerCurrentHealth(player);
 			players.push(player);
 		},

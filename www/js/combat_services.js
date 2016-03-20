@@ -9,8 +9,8 @@ angular.module('game_jam.combat_services', ['common.services'])
 	var TOGGLE_SPELL = "SPELL";
 	var TOGGLE_SPECIAL = "SPECIAL";
 
-	var COMBAT_WIN_STRING = "You WIN!";
-	var COMBAT_LOSE_STRING = "You LOST :-(";
+	var COMBAT_WIN_STRING = "Victory!";
+	var COMBAT_LOSE_STRING = "You dead foo :-(";
 
 	var combat = {};
 
