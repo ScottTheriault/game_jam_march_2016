@@ -1,12 +1,12 @@
 angular.module('game_jam.level_services', ['common.services'])
 
-.factory('level_services', ['utility', 'text_services', function(utility, text_services) {
+.factory('level_services', ['utility', 'text_services', 'walking_services', function(utility, text_services, walking_services) {
 	var TEXT_VIEW = 'TEXT_VIEW';
 	var WALKING = 'WALKING';
 	var levels =
 		[
 			{type: TEXT_VIEW, text_index: 0},
-			{type: WALKING}
+			{type: WALKING, walking_index: 0}
 		];
 	var index = -1;
 
@@ -16,6 +16,7 @@ angular.module('game_jam.level_services', ['common.services'])
 	}
 
 	function nextWalking() {
+		walking_services.setByIndex(levels[index].walking_index);
 		return 'tab.walk';
 	}
 
