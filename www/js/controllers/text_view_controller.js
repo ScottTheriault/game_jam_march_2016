@@ -9,7 +9,7 @@ angular.module('game_jam.controllers')
 		var newIndex = text_services.next();
 
 		if (newIndex === 0) {
-			//TODO next level
+			$scope.goNextLevel();
 		}
 	}
 });
